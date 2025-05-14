@@ -1,35 +1,57 @@
 # Netflix Movie Data Analysis
 
-This project explores a dataset of 9,800+ movies available on Netflix to extract meaningful insights related to genres, popularity, and yearly trends. It involves cleaning, preprocessing, and analyzing data to identify the most popular movies, most frequent genres, and active release years.
+This project performs an exploratory data analysis (EDA) on a Netflix movie dataset consisting of over 9800 movies. It includes genre frequency analysis, popularity insights, clustering, and sentiment analysis of movie descriptions.
 
 ---
 
-## Dataset Summary
+## Dataset Overview
 
-- **Rows**: 9827  
-- **Columns**: 9  
-- **Missing Values**: None  
-- **Duplicates**: None  
-
-### Columns:
-| Column             | Description                         |
-|--------------------|-------------------------------------|
-| `Release_Date`     | Movie release date                  |
-| `Title`            | Movie title                         |
-| `Overview`         | Description/summary (dropped)       |
-| `Popularity`       | Popularity score                    |
-| `Vote_Count`       | Total vote count                    |
-| `Vote_Average`     | Average rating                      |
-| `Original_Language`| Original language (dropped)         |
-| `Genre`            | Comma-separated genre list          |
-| `Poster_Url`       | Poster image URL (not analyzed)     |
+- **Total Entries**: 9827 movies
+- **Columns**:
+  - `Release_Date`
+  - `Title`
+  - `Overview`
+  - `Popularity`
+  - `Vote_Count`
+  - `Vote_Average`
+  - `Original_Language`
+  - `Genre`
+  - `Poster_Url`
 
 ---
 
-## Data Preprocessing
+## Preprocessing Summary
 
-- `Release_Date` converted to datetime and year extracted.
-- `Original_Language` and `Overview` columns dropped.
-- `Genre` cleaned by splitting comma-separated strings and stripping white spaces.
-- `Popularity` column contains outliers.
 - No missing or duplicate values.
+- `Release_Date` column was converted to extract the **year**.
+- `Overview` and `Original_Language` were **excluded** from some analyses.
+- Outliers were found in the `Popularity` column.
+- `Genre` values (comma-separated) were cleaned, split into individual rows, and white spaces trimmed.
+
+---
+
+## Key Insights
+
+- **Drama** is the most frequent genre, appearing in over **14%** of movies across 19 total genres.
+- **Spider-Man: No Way Home** is the **most popular movie**, with genres: Action, Adventure, and Science Fiction.
+- **United States vs Billie Holiday** and **Threads** are among the **least popular**.
+- **Year 2020** had the **highest number of film releases** in the dataset.
+
+---
+
+## Visualizations
+
+- **Bar Charts** for genre frequency and year-wise movie count.
+- **Boxplots** to detect outliers in `Popularity` and `Vote_Average`.
+- **Scatter Plots** to explore relationships between popularity and votes.
+
+---
+
+## Clustering (K-Means)
+
+Movies were clustered into 4 groups based on:
+
+- **Popularity**
+- **Vote_Average**
+
+Each cluster represents a group of movies with similar audience reception.
