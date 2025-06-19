@@ -46,8 +46,7 @@ This project performs an exploratory data analysis (EDA) on a Netflix movie data
 - **Scatter Plots** to explore relationships between popularity and votes.
 
 ---
-
-## Clustering (K-Means)
+## K- Means Clustering
 
 Movies were clustered into 4 groups based on:
 
